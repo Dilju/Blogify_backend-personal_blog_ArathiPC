@@ -30,14 +30,25 @@ await connectDB();
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173", //for local dev
-      "https://blogify-frontend-personal-blog-arat.vercel.app", // for vercel frontend
-    ], 
+    origin: function (origin, callback) {
+      const allowedOrigins = [
+        "http://localhost:5173", // for local dev
+        "https://blogify-frontend-personal-blog-arat.vercel.app", // ✅ production
+        "https://blogify-frontend-personal-blog-arathi-pqranh5uc-diljus-projects.vercel.app", // ✅ preview
+      ];
+
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        console.log("❌ Blocked by CORS:", origin);
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
-)
+);
+
 
 // ✅ Import routes
 import authRoutes from "./routes/authRout.js";
