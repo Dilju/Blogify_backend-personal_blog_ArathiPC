@@ -2,8 +2,8 @@ import express from "express";
 import type { Request, Response } from "express";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import User from "../models/User";
-import type { IUser } from "../models/User";
+import User from "../models/User.js";
+import type { IUser } from "../models/User.js";
 
 const router = express.Router();
 
