@@ -32,7 +32,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173", //for local dev
-      "https://blogify-frontend-personal-blog-arat.vercel.app", // for vercel frontend
+      "https://blogify-frontend-personal-blog-arathi-1sthgjmx3-diljus-projects.vercel.app", // for vercel frontend
     ], 
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
