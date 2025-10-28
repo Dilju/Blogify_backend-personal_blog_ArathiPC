@@ -34,7 +34,6 @@ app.use(
       const allowedOrigins = [
         "http://localhost:5173", // for local dev
         "https://blogify-frontend-personal-blog-arat.vercel.app", // ✅ production
-        "https://blogify-frontend-personal-blog-arathi-pqranh5uc-diljus-projects.vercel.app", // ✅ preview
       ];
 
       if (!origin || allowedOrigins.includes(origin)) {
